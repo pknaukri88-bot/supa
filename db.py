@@ -12,7 +12,7 @@ def get_database_url() -> str:
     """Read the Supabase Postgres connection string from Streamlit secrets or env."""
     url = None
     try:
-        url = st.secrets.get("DATABASE_URL")
+        url = st.secrets["DATABASE_URL"]
     except Exception:
         url = None
     url = url or os.getenv("DATABASE_URL")
